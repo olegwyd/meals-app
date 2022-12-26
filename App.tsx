@@ -1,51 +1,16 @@
-import React, { useState } from 'react';
-import { Searchbar } from 'react-native-paper';
-
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  StatusBar,
-  NativeSyntheticEvent,
-  TextInputChangeEventData,
-} from 'react-native';
+import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
+import React from 'react';
+import { ThemeProvider } from 'styled-components/native';
+import { theme } from './src/infrastructure/theme';
+import RestorantsScreen from './src/features/restorants/screens/restorants.screen';
 
 export default function App() {
-  const [search, setSearch] = useState<string>('');
-
-  const handleOnChange = (
-    searchValue: NativeSyntheticEvent<TextInputChangeEventData>,
-  ) => {
-    setSearch(`${searchValue}`);
-  };
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.searchBarWrapper}>
-        <Searchbar value={search} onChange={handleOnChange} />
-      </View>
-      <View style={styles.listContainer}>
-        <Text>list</Text>
-      </View>
-    </SafeAreaView>
+    <>
+      <ThemeProvider theme={theme}>
+        <RestorantsScreen />
+      </ThemeProvider>
+      <ExpoStatusBar style="auto" />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight,
-  },
-  searchContainer: {
-    backgroundColor: 'green',
-    padding: 10,
-  },
-  listContainer: {
-    backgroundColor: 'red',
-    padding: 10,
-    flex: 1,
-  },
-  searchBarWrapper: {
-    padding: 10,
-  },
-});
