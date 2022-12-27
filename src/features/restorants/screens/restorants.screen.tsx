@@ -12,13 +12,17 @@ const StyledWrapper = styled.SafeAreaView`
   flex: 1;
   margintop: ${StatusBar.currentHeight}px;
 `;
+
 const StyledSearchWrapper = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
+const StyledSearchBar = styled(Searchbar)`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+`;
+
 const StyledListWrapper = styled.View`
-  background-color: ${(props) => props.theme.colors.ui.primary};
-  padding: padding: ${(props) => props.theme.space[3]};
+  padding: ${(props) => props.theme.space[3]};
   flex: 1;
 `;
 
@@ -34,7 +38,7 @@ const RestorantsScreen = () => {
   return (
     <StyledWrapper>
       <StyledSearchWrapper>
-        <Searchbar value={search} onChange={handleOnChange} />
+        <StyledSearchBar value={search} onChange={handleOnChange} />
       </StyledSearchWrapper>
       <StyledListWrapper>
         <RestaurantInfoCard restaurant={undefined} />
