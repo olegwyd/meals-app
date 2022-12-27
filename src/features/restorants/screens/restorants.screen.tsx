@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import styled from 'styled-components/native';
 import { Searchbar } from 'react-native-paper';
-import RestaurantInfoCard from '../conponents/restaurant-info-card.component';
+import RestaurantInfoCard from '../components/restaurant-info-card.component';
 
 const StyledWrapper = styled.SafeAreaView`
   flex: 1;
