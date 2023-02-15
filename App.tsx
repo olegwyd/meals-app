@@ -15,9 +15,9 @@ import {
   Lato_400Regular,
 } from '@expo-google-fonts/lato';
 
-import RestaurantsScreen from './src/features/restorants/screens/restorants.screen';
-import MapScreen from './src/features/restorants/screens/map.screen';
-import SettingsScreen from './src/features/restorants/screens/settings.screen';
+import RestaurantsScreen from './src/features/restaurants/screens/restaurants.screen';
+import MapScreen from './src/features/restaurants/screens/map.screen';
+import SettingsScreen from './src/features/restaurants/screens/settings.screen';
 
 const Tab = createBottomTabNavigator();
 
